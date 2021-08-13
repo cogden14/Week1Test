@@ -19,7 +19,7 @@ public class DogGenetics {
         String dogName = sc.nextLine();
         
         System.out.println("Well then, I have this highly reputable report on " + dogName + "'s prestigous background right here.\n");
-        System.out.println(dogName + " is:");
+        System.out.println(dogName + " is:\n");
         
         int sum = 0;
         Random percentages = new Random();
@@ -37,6 +37,8 @@ public class DogGenetics {
         System.out.println(dogBreedPercentages[2] + "% Golden Retriever");
         System.out.println(dogBreedPercentages[3] + "% Chihuahua");
         System.out.println(dogBreedPercentages[4] + "% Bijon Frise");
+        
+        System.out.println("Wow, that's QUITE the dog!");
         
     }
 }
