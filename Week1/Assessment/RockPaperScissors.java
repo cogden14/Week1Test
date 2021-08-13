@@ -79,6 +79,11 @@ public class RockPaperScissors {
                 continuePlaying = false;
             }
             
+            // Reset scores
+            numTies = 0;
+            numUserWins = 0;
+            numComputerWins = 0;
+            
         } while(continuePlaying);
     }
     
