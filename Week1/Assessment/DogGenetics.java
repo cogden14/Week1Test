@@ -25,12 +25,15 @@ public class DogGenetics {
         Random percentages = new Random();
         
         int[] dogBreedPercentages = new int[5];
-        for (int i=0; i<dogBreedPercentages.length-1;i++) {
-            dogBreedPercentages[i] = percentages.nextInt(100-sum) + 1;
-            sum+=dogBreedPercentages[i];
-        }
-        // Final value is difference between 100
-        dogBreedPercentages[dogBreedPercentages.length-1] = 100 - sum;
+        do
+        {
+            dogBreedPercentages[0] = percentages.nextInt(100);
+            dogBreedPercentages[1] = percentages.nextInt(100);
+            dogBreedPercentages[2] = percentages.nextInt(100);
+            dogBreedPercentages[3] = percentages.nextInt(100);
+            dogBreedPercentages[4] = percentages.nextInt(100);
+            sum = (dogBreedPercentages[0] + dogBreedPercentages[1] + dogBreedPercentages[2] + dogBreedPercentages[3] + dogBreedPercentages[4]);
+        } while (sum != 100);
         
         System.out.println(dogBreedPercentages[0] + "% German Shepard");
         System.out.println(dogBreedPercentages[1] + "% Siberian Husky");
@@ -38,7 +41,7 @@ public class DogGenetics {
         System.out.println(dogBreedPercentages[3] + "% Chihuahua");
         System.out.println(dogBreedPercentages[4] + "% Bijon Frise");
         
-        System.out.println("Wow, that's QUITE the dog!");
+        System.out.println("\nWow, that's QUITE the dog!");
         
     }
 }
