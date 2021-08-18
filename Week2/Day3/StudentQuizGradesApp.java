@@ -12,6 +12,8 @@ import static Day3.StudentQuizGrades.userIO;
  * @author coleogden
  */
 public class StudentQuizGradesApp {
+    static final int TOTAL_NUM_FUNCTIONS = 8;
+    
         public static void main(String[] args) {
         run();
     }
@@ -27,14 +29,16 @@ public class StudentQuizGradesApp {
             userIO.print("4) View a list of quiz scores for a student");
             userIO.print("5) View the average quiz score for a student");
             userIO.print("6) Get average quiz score of class");
-            userIO.print("7) Exit");
+            userIO.print("7) Get students with highest grade in the class");
+            userIO.print("8) Get students with lowest score in the class");
+            userIO.print((TOTAL_NUM_FUNCTIONS+1) + ") Exit");
             
-            selection = userIO.readInt("Enter a number to select operation: ", 1, 7);
+            selection = userIO.readInt("Enter a number to select operation: ", 1, TOTAL_NUM_FUNCTIONS + 1);
             
-            if(selection != 7){
+            if(selection != TOTAL_NUM_FUNCTIONS + 1){
                 studentQuizGrades.delegateSelection(selection);
             }
-        } while (selection != 7);
+        } while (selection != TOTAL_NUM_FUNCTIONS + 1);
         
         System.out.println("Thank you! Come again!");
     }

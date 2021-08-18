@@ -26,6 +26,8 @@ public class StudentQuizGrades {
             case 4 -> userIO.printQuizScores(getQuizScores(userIO.readString("Enter the student's name to get quiz scores: ")));
             case 5 -> userIO.print(String.valueOf(getAvgQuizScore(userIO.readString("Enter the student's name to get average quiz score: "))));
             case 6 -> userIO.print(String.valueOf(getClassAvgScore()));
+            case 7 -> userIO.printStudentNames(getStudentsWithHighestScore());
+            case 8 -> userIO.printStudentNames(getStudentsWithLowestScore());
         }
     }
     
@@ -86,9 +88,11 @@ public class StudentQuizGrades {
                 studentsWithHighestGrade.clear();
                 highestAverage = avg;
             }
-            studentsWithHighestGrade.add(String.valueOf(pair.getKey()));
-            it.remove(); // avoids a ConcurrentModificationException
+            if (avg == highestAverage) {
+                studentsWithHighestGrade.add(String.valueOf(pair.getKey()));
+            }
         }
+        userIO.print("Highest grade: " + highestAverage);
         return studentsWithHighestGrade;
     }
     
@@ -104,9 +108,11 @@ public class StudentQuizGrades {
                 studentsWithLowestGrade.clear();
                 lowestAverage = avg;
             }
-            studentsWithLowestGrade.add(String.valueOf(pair.getKey()));
-            it.remove(); // avoids a ConcurrentModificationException
+            if (avg == lowestAverage) {
+                studentsWithLowestGrade.add(String.valueOf(pair.getKey()));
+            }
         }
+        userIO.print("Lowest grade: " + lowestAverage);
         return studentsWithLowestGrade;
     }
 }

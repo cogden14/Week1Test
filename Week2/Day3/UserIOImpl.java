@@ -97,4 +97,11 @@ public class UserIOImpl implements UserIO{
             print(String.valueOf(score));
         });
     }
+    
+    @Override
+    public void printStudentNames(ArrayList<String> names) {
+        for(String name : names) {
+            print(name);
+        }
+    }
 }
