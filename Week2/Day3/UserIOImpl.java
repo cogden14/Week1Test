@@ -5,6 +5,7 @@
  */
 package Day3;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -88,5 +89,12 @@ public class UserIOImpl implements UserIO{
         value = Long.parseLong(sc.nextLine());
         } while (value < min || value > max);
         return value;
+    }
+    
+    @Override
+    public void printQuizScores(ArrayList<Integer> scores) {
+        scores.forEach(score -> {
+            print(String.valueOf(score));
+        });
     }
 }

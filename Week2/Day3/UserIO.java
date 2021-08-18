@@ -5,6 +5,8 @@
  */
 package Day3;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author coleogden
@@ -30,5 +32,7 @@ public interface UserIO {
     long readLong(String prompt);
 
     long readLong(String prompt, long min, long max);
+    
+    void printQuizScores(ArrayList<Integer> scores);
 
 }
