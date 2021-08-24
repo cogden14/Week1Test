@@ -45,8 +45,8 @@ public class DVDLibraryDaoFileImplTest {
     public void tearDown() {
     }
 
-       @Test
-    public void testAddGetStudent() throws Exception {
+    @Test
+    public void testAddGetDVD() throws Exception {
         String title = "Victory of Fortnoy";
         String releaseDate = "Mar 3, 1992";
         double mpaaRating = 5.0;
