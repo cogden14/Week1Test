@@ -5,9 +5,9 @@
  */
 package DVDLibrary.dao;
 
-import DVDLibrary.dao.DVDLibraryDao;
 import DVDLibrary.dto.DVD;
 import java.io.FileWriter;
+import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -49,12 +49,12 @@ public class DVDLibraryDaoFileImplTest {
     @Test
     public void testAddGetDVD() throws Exception {
         String title = "Victory of Fortnoy";
-        String releaseDate = "Mar 3, 1992";
-        double mpaaRating = 5.0;
-        String studio = "Sony";
-        String director = "Martin Scorsese";
-        String note = "watch with popcorn";
-        DVD dvd = new DVD(title,releaseDate,mpaaRating,director,studio,note);
+        DVD dvd = new DVD(title);
+        dvd.setReleaseDate("Mar 3, 1992");
+        dvd.setMpaaRating(5.0);
+        dvd.setDirector("Martin Scorsese");
+        dvd.setStudio("Sony");
+        dvd.setNote("watch with popcorn");
         
         testDao.addDVD(title, dvd);
         
@@ -77,91 +77,94 @@ public class DVDLibraryDaoFileImplTest {
                 "Checking note.");
     }
 
-//    @Test
-//    public void testAddGetAllStudents() throws Exception {
-//        // Create our first student
-//        Student firstStudent = new Student("0001");
-//        firstStudent.setFirstName("Ada");
-//        firstStudent.setLastName("Lovelace");
-//        firstStudent.setCohort("Java-May-1845");
-//
-//        // Create our second student
-//        Student secondStudent = new Student("0002");
-//        secondStudent.setFirstName("Charles");
-//        secondStudent.setLastName("Babbage");
-//        secondStudent.setCohort(".NET-May-1845");
-//
-//        // Add both our students to the DAO
-//        testDao.addStudent(firstStudent.getStudentId(), firstStudent);
-//        testDao.addStudent(secondStudent.getStudentId(), secondStudent);
-//
-//        // Retrieve the list of all students within the DAO
-//        List<Student> allStudents = testDao.getAllStudents();
-//
-//        // First check the general contents of the list
-//        assertNotNull(allStudents, "The list of students must not null");
-//        assertEquals(2, allStudents.size(), "List of students should have 2 students.");
-//
-//        // Then the specifics
-//        assertTrue(testDao.getAllStudents().contains(firstStudent),
-//                "The list of students should include Ada.");
-//        assertTrue(testDao.getAllStudents().contains(secondStudent),
-//                "The list of students should include Charles.");
-//
-//    }
-//
-//    @Test
-//    public void testRemoveStudent() throws Exception {
-//        // Create two new students
-//        Student firstStudent = new Student("0001");
-//        firstStudent.setFirstName("Ada");
-//        firstStudent.setLastName("Lovelace");
-//        firstStudent.setCohort("Java-May-1945");
-//
-//        Student secondStudent = new Student("0002");
-//        secondStudent.setFirstName("Charles");
-//        secondStudent.setLastName("Babbage");
-//        secondStudent.setCohort(".NET-May-1945");
-//
-//        // Add both to the DAO
-//        testDao.addStudent(firstStudent.getStudentId(), firstStudent);
-//        testDao.addStudent(secondStudent.getStudentId(), secondStudent);
-//
-//        // remove the first student - Ada
-//        Student removedStudent = testDao.removeStudent(firstStudent.getStudentId());
-//
-//        // Check that the correct object was removed.
-//        assertEquals(removedStudent, firstStudent, "The removed student should be Ada.");
-//
-//        // Get all the students
-//        List<Student> allStudents = testDao.getAllStudents();
-//
-//        // First check the general contents of the list
-//        assertNotNull(allStudents, "All students list should be not null.");
-//        assertEquals(1, allStudents.size(), "All students should only have 1 student.");
-//
-//        // Then the specifics
-//        assertFalse(allStudents.contains(firstStudent), "All students should NOT include Ada.");
-//        assertTrue(allStudents.contains(secondStudent), "All students should NOT include Charles.");
-//
-//        // Remove the second student
-//        removedStudent = testDao.removeStudent(secondStudent.getStudentId());
-//        // Check that the correct object was removed.
-//        assertEquals(removedStudent, secondStudent, "The removed student should be Charles.");
-//
-//        // retrieve all of the students again, and check the list.
-//        allStudents = testDao.getAllStudents();
-//
-//        // Check the contents of the list - it should be empty
-//        assertTrue(allStudents.isEmpty(), "The retrieved list of students should be empty.");
-//
-//        // Try to 'get' both students by their old id - they should be null!
-//        Student retrievedStudent = testDao.getStudent(firstStudent.getStudentId());
-//        assertNull(retrievedStudent, "Ada was removed, should be null.");
-//
-//        retrievedStudent = testDao.getStudent(secondStudent.getStudentId());
-//        assertNull(retrievedStudent, "Charles was removed, should be null.");
-//
-//    }
+    @Test
+    public void testAddGetAllDVDs() throws Exception {
+        
+        DVD firstDVD = new DVD("Battles of Agamemnon");
+        firstDVD.setReleaseDate("Sept. 8, 1991");
+        firstDVD.setMpaaRating(5.1);
+        firstDVD.setDirector("Christopher Nolan");
+        firstDVD.setStudio("Universal Studios");
+        firstDVD.setNote("thriller");
+
+        DVD secondDVD = new DVD("Conquests of Historia");
+        secondDVD.setReleaseDate("Sept. 1, 2004");
+        secondDVD.setMpaaRating(5.4);
+        secondDVD.setDirector("Jonathon Nolan");
+        secondDVD.setStudio("21st Century Fox");
+        secondDVD.setNote("great one, kids for sure");
+        
+        testDao.addDVD(firstDVD.getTitle(), firstDVD);
+        testDao.addDVD(secondDVD.getTitle(), secondDVD);
+
+        List<DVD> allDVDs = testDao.getAllDVDs();
+
+        // First check the general contents of the list
+        assertNotNull(allDVDs, "The library of DVDs must not null");
+        assertEquals(2, allDVDs.size(), "Library of DVDs should have 2 DVDs.");
+
+        // Then the specifics
+        assertTrue(testDao.getAllDVDs().contains(firstDVD),
+                "The library of DVDs should include \'Battles of Agamemnon.\'");
+        assertTrue(testDao.getAllDVDs().contains(secondDVD),
+                "The library of DVDs should include \'Conquests of Historia.\'");
+
+    }
+
+    @Test
+    public void testRemoveDVD() throws Exception {
+        DVD firstDVD = new DVD("Battles of Agamemnon");
+        firstDVD.setReleaseDate("Sept. 8, 1991");
+        firstDVD.setMpaaRating(5.1);
+        firstDVD.setDirector("Christopher Nolan");
+        firstDVD.setStudio("Universal Studios");
+        firstDVD.setNote("thriller");
+
+        DVD secondDVD = new DVD("Conquests of Historia");
+        secondDVD.setReleaseDate("Sept. 1, 2004");
+        secondDVD.setMpaaRating(5.4);
+        secondDVD.setDirector("Jonathon Nolan");
+        secondDVD.setStudio("21st Century Fox");
+        secondDVD.setNote("great one, kids for sure");
+        
+        testDao.addDVD(firstDVD.getTitle(), firstDVD);
+        testDao.addDVD(secondDVD.getTitle(), secondDVD);
+
+        // remove the first student - Ada
+        DVD removedDVD = testDao.removeDVD(firstDVD.getTitle());
+
+        // Check that the correct object was removed.
+        assertEquals(removedDVD, firstDVD, "The removed DVD should be \'Battles of Agamemnon\'.");
+
+        // Get all the students
+        List<DVD> allDVDs = testDao.getAllDVDs();
+
+        // First check the general contents of the list
+        assertNotNull(allDVDs, "All DVDs list should be not null.");
+        assertEquals(1, allDVDs.size(), "All DVDs should only have 1 DVD.");
+
+        // Then the specifics
+        assertFalse(allDVDs.contains(firstDVD), "All DVDs should NOT include \'Battles of Agamemnon\'.");
+        assertTrue(allDVDs.contains(secondDVD), "All DVDs should include \'Conquests of Historia\'.");
+
+        // Remove the second DVD
+        removedDVD = testDao.removeDVD(secondDVD.getTitle());
+        // Check that the correct object was removed.
+        assertEquals(removedDVD, secondDVD, "The removed DVD should be \'Conquests of Historia\'.");
+
+        // retrieve all of the DVDs again, and check the list.
+        allDVDs = testDao.getAllDVDs();
+
+        // Check the contents of the list - it should be empty
+        assertTrue(allDVDs.isEmpty(), "The retrieved list of DVDs should be empty.");
+
+        // Try to 'get' both DVDs by their old title - they should be null!
+        DVD retrievedDVD = testDao.getDVD(firstDVD.getTitle());
+        assertNull(retrievedDVD, "\'Battles of Agamemnon\' was removed, should be null.");
+
+        retrievedDVD = testDao.getDVD(secondDVD.getTitle());
+        assertNull(retrievedDVD, "\'Conquests of Historia\' was removed, should be null.");
+
+    }
     
 }

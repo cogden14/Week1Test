@@ -5,6 +5,8 @@
  */
 package DVDLibrary.dto;
 
+import java.util.Objects;
+
 /**
  *
  * @author coleogden
@@ -17,14 +19,9 @@ public class DVD {
     private String director;
     private String studio;
     private String note;
-
-    public DVD(String title, String releaseDate, double mpaaRating, String director, String studio, String note) {
+    
+    public DVD(String title) {
         this.title = title;
-        this.releaseDate = releaseDate;
-        this.mpaaRating = mpaaRating;
-        this.director = director;
-        this.studio = studio;
-        this.note = note;
     }
 
     public String getTitle() {
@@ -73,5 +70,55 @@ public class DVD {
 
     public void setNote(String note) {
         this.note = note;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.title);
+        hash = 89 * hash + Objects.hashCode(this.releaseDate);
+        hash = 89 * hash + Objects.hashCode(this.mpaaRating);
+        hash = 89 * hash + Objects.hashCode(this.director);
+        hash = 89 * hash + Objects.hashCode(this.studio);
+        hash = 89 * hash + Objects.hashCode(this.note);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final DVD other = (DVD) obj;
+        if (!Objects.equals(this.title, other.title)) {
+            return false;
+        }
+        if (!Objects.equals(this.releaseDate, other.releaseDate)) {
+            return false;
+        }
+        if (!Objects.equals(this.mpaaRating, other.mpaaRating)) {
+            return false;
+        }
+        if (!Objects.equals(this.director, other.director)) {
+            return false;
+        }
+        if (!Objects.equals(this.studio, other.studio)) {
+            return false;
+        }
+        if (!Objects.equals(this.note, other.note)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "DVD{" + "title=" + title + ", releaseDate=" + releaseDate + ", mpaaRating=" + mpaaRating + ", director=" + director + ", studio=" + studio + ", note=" + note + '}';
     }
 }

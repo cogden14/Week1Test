@@ -34,8 +34,13 @@ public class DVDLibraryView {
         String director = io.readString("Please enter director");
         String studio = io.readString("Please enter studio");
         String note = io.readString("Please enter extra note (e.g. good for family)");
-        DVD newStudent = new DVD(title,releaseDate,mpaaRating,director,studio,note);
-        return newStudent;
+        DVD newDVD = new DVD(title);
+        newDVD.setReleaseDate(releaseDate);
+        newDVD.setMpaaRating(mpaaRating);
+        newDVD.setDirector(director);
+        newDVD.setStudio(studio);
+        newDVD.setNote(note);
+        return newDVD;
     }
     
     public void displayCreateDVDBanner() {

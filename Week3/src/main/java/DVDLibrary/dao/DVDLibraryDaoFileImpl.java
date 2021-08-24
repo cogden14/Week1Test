@@ -72,7 +72,12 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
     private DVD unmarshallDVD(String DVDAsText) {
         String[] DVDTokens = DVDAsText.split(DELIMITER);
-        DVD DVDFromFile = new DVD(DVDTokens[0], DVDTokens[1], Double.parseDouble(DVDTokens[2]), DVDTokens[3], DVDTokens[4], DVDTokens[5]);
+        DVD DVDFromFile = new DVD(DVDTokens[0]);
+        DVDFromFile.setReleaseDate(DVDTokens[1]);
+        DVDFromFile.setMpaaRating(Double.parseDouble(DVDTokens[2]));
+        DVDFromFile.setDirector(DVDTokens[3]);
+        DVDFromFile.setStudio(DVDTokens[4]);
+        DVDFromFile.setNote(DVDTokens[5]);
         return DVDFromFile;
     }
 
