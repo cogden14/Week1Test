@@ -1,4 +1,4 @@
-package com.mm.addressbook.dao;
+package AddressBook.dao;
 
 
 public class AddressBookDaoException extends Exception {

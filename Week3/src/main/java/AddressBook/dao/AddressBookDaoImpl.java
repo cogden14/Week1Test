@@ -1,7 +1,6 @@
-package com.mm.addressbook.dao;
+package AddressBook.dao;
 
-import Week2.AddressBook.dao.AddressBookDao;
-import Week2.AddressBook.dto.Address;
+import AddressBook.dto.Address;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -15,10 +14,18 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class AddressBookDaoImpl implements AddressBookDao{
-    public static final String FILE_NAME = "book.txt";
+    public final String FILE_NAME;
     public static final String DELIMITER = "::";
     
     private Map<String, Address> book = new HashMap<String, Address>();
+    
+    public AddressBookDaoImpl() {
+        FILE_NAME = "book.txt";
+    }
+
+    public AddressBookDaoImpl(String bookTextFile) {
+        FILE_NAME = bookTextFile;
+    }
 
     @Override
     public Address addAddress(Address addr) {

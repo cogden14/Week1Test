@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Week2.DVDLibrary.dao;
+package DVDLibrary.dao;
 
-import Week2.DVDLibrary.dto.DVD;
+import DVDLibrary.dao.DVDLibraryDao;
+import DVDLibrary.dto.DVD;
 import java.io.FileWriter;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;

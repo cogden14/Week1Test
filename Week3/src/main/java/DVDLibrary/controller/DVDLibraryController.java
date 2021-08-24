@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Week2.DVDLibrary.controller;
+package DVDLibrary.controller;
 
-import Week2.DVDLibrary.dao.DVDLibraryDao;
-import Week2.DVDLibrary.dao.DVDLibraryDaoException;
-import Week2.DVDLibrary.dto.DVD;
-import Week2.DVDLibrary.ui.DVDLibraryView;
-import Week2.DVDLibrary.ui.UserIO;
+import DVDLibrary.dao.DVDLibraryDao;
+import DVDLibrary.dao.DVDLibraryDaoException;
+import DVDLibrary.dto.DVD;
+import DVDLibrary.ui.DVDLibraryView;
+import DVDLibrary.ui.UserIO;
 import java.util.List;
 
 /**

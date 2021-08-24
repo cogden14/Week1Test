@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Week2.DVDLibrary.ui;
+package DVDLibrary.ui;
 
 import java.util.ArrayList;
 

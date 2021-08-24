@@ -1,4 +1,4 @@
-package com.mm.addressbook.dto;
+package AddressBook.dto;
 
 
 

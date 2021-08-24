@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Week2.DVDLibrary;
+package DVDLibrary;
 
-import Week2.DVDLibrary.controller.DVDLibraryController;
-import Week2.DVDLibrary.dao.DVDLibraryDao;
-import Week2.DVDLibrary.dao.DVDLibraryDaoFileImpl;
-import Week2.DVDLibrary.ui.DVDLibraryView;
-import Week2.DVDLibrary.ui.UserIO;
-import Week2.DVDLibrary.ui.UserIOConsoleImpl;
+import DVDLibrary.controller.DVDLibraryController;
+import DVDLibrary.dao.DVDLibraryDao;
+import DVDLibrary.dao.DVDLibraryDaoFileImpl;
+import DVDLibrary.ui.DVDLibraryView;
+import DVDLibrary.ui.UserIO;
+import DVDLibrary.ui.UserIOConsoleImpl;
 
 /**
  *

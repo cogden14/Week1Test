@@ -1,6 +1,6 @@
-package Week2.AddressBook.dao;
-import Week2.AddressBook.dto.Address;
+package AddressBook.dao;
 
+import AddressBook.dto.Address;
 import java.util.List;
 
 public interface AddressBookDao {

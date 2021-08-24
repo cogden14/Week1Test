@@ -1,9 +1,9 @@
-package com.mm.addressbook.controller;
+package AddressBook.controller;
 
-import Week2.AddressBook.dao.AddressBookDao;
-import Week2.AddressBook.dao.AddressBookDaoException;
-import Week2.AddressBook.dto.Address;
-import Week2.AddressBook.ui.AddressBookView;
+import AddressBook.dao.AddressBookDao;
+import AddressBook.dao.AddressBookDaoException;
+import AddressBook.dto.Address;
+import AddressBook.ui.AddressBookView;
 import java.util.List;
 
 import java.util.List;

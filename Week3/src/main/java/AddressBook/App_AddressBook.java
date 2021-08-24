@@ -1,12 +1,11 @@
-package Week2.AddressBook;
+package AddressBook;
 
-import Week2.AddressBook.AddressBookController;
-import Week2.AddressBook.AddressBookController;
-import com.mm.addressbook.dao.AddressBookDao;
-import Week2.AddressBook.AddressBookDaoImpl;
-import com.mm.addressbook.ui.AddressBookView;
-import Week2.AddressBook.UserIO;
-import Week2.AddressBook.UserIOImpl;
+import AddressBook.controller.AddressBookController;
+import AddressBook.dao.AddressBookDao;
+import AddressBook.dao.AddressBookDaoImpl;
+import AddressBook.ui.AddressBookView;
+import AddressBook.ui.UserIO;
+import AddressBook.ui.UserIOImpl;
 
 public class App_AddressBook {
     public static void main(String[] args) {

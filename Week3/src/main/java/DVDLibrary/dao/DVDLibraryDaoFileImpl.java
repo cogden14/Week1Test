@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Week2.DVDLibrary.dao;
+package DVDLibrary.dao;
 
-import static Week2.ClassRoster.dao.ClassRosterDaoFileImpl.ROSTER_FILE;
-import Week2.DVDLibrary.dto.DVD;
+import DVDLibrary.dto.DVD;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -123,7 +122,7 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
         PrintWriter out;
 
         try {
-            out = new PrintWriter(new FileWriter(ROSTER_FILE));
+            out = new PrintWriter(new FileWriter(LIBRARY_FILE));
         } catch (IOException e) {
             throw new DVDLibraryDaoException(
                     "Could not save student data.", e);

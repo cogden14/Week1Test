@@ -1,9 +1,9 @@
-package Week2.AddressBook.ui;
+package AddressBook.ui;
 
 
 
 
-import Week2kAddressBookto.Address;
+import AddressBook.dto.Address;
 import java.util.List;
 
 public class AddressBookView {

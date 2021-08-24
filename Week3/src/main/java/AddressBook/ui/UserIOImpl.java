@@ -1,8 +1,7 @@
-package com.mm.addressbook.ui;
+package AddressBook.ui;
 
 
 
-import Week2.AddressBook.UserIO;
 import java.util.Scanner;
 
 public class UserIOImpl implements UserIO{

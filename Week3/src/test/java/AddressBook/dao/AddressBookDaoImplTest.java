@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Week2.AddressBook.dao;
+package AddressBook.dao;
 
 import java.io.FileWriter;
 import org.junit.jupiter.api.AfterEach;
@@ -19,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class AddressBookDaoImplTest {
     
+    AddressBookDao testDao;
     public AddressBookDaoImplTest() {
     }
     
@@ -32,7 +33,7 @@ public class AddressBookDaoImplTest {
     
     @BeforeEach
     public void setUp() throws Exception {
-        String testFile = "testlibrary.txt";
+        String testFile = "testbook.txt";
         // Use the FileWriter to quickly blank the file
         new FileWriter(testFile);
         testDao = new AddressBookDaoImpl(testFile);

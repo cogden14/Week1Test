@@ -1,4 +1,4 @@
-package Week2.AddressBook;
+package AddressBook.ui;
 
 
 
