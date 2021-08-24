@@ -130,13 +130,13 @@ public class DVDLibraryDaoFileImplTest {
         testDao.addDVD(firstDVD.getTitle(), firstDVD);
         testDao.addDVD(secondDVD.getTitle(), secondDVD);
 
-        // remove the first student - Ada
+        // remove the first DVD - Battles of Agamemnon
         DVD removedDVD = testDao.removeDVD(firstDVD.getTitle());
 
         // Check that the correct object was removed.
         assertEquals(removedDVD, firstDVD, "The removed DVD should be \'Battles of Agamemnon\'.");
 
-        // Get all the students
+        // Get all the DVDs
         List<DVD> allDVDs = testDao.getAllDVDs();
 
         // First check the general contents of the list
